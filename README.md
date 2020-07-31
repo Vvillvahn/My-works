@@ -1,4 +1,4 @@
-Simple "To Do List" project, using MySQL database.
+Simple "To Do List" project using MySQL database.
 * Thymeleaf
 * MySQL
 * Spring Data
