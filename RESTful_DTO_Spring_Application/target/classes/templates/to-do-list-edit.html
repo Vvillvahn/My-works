@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <title>To Do List</title>
+</head>
+
+<body>
+<header>
+    <div class="text-center">
+        <div class="text-big-weight text-white text-font-size-54 text-shadow">To Do List</div>
+    </div>
+</header>
+
+<main>
+    <div class="text-center" th:each="note : ${note}">
+        <div class="mb15 text-medium-weight text-white text-font-size-36 text-shadow">Edit note</div>
+        <form method="post">
+            <input class="text-low-weight text-darkgrey text-font-size-18" type="text" th:value="${note.title}" name="title" placeholder="Heading" required>
+            <input class="text-low-weight text-darkgrey text-font-size-18" type="text" th:value="${note.deadline}" name="deadline" placeholder="Deadline (Optional)">
+            <textarea class="display-block mt5 text-low-weight text-darkgrey text-font-size-18" th:text="${note.fullText}" name="fullText" placeholder="Task Description (Optional)"></textarea>
+            <button class="display-block mt15 button-general text-medium-weight text-darkgrey text-font-size-27" type="submit">Update note</button>
+        </form>
+        
+        <form th:action="'/toDoList/'">
+            <button class="mt15 button-general text-medium-weight text-darkgrey text-font-size-27">Back</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="mt30 text-center">
+        <span class="text-low-weight text-white text-font-size-18">Created and Designed by </span>
+        <a class="text-link text-medium-weight text-white text-font-size-18" href="https://github.com/Vvillvahn">Galancev M.</a>
+    </div>
+</footer>
+</body>
+
+</html>
